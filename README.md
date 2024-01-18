@@ -34,4 +34,4 @@ Become part of this groundbreaking initiative! Your contributions are pivotal in
 ## Sponsor 🤝
 Your support fuels the growth of this transformative project. Join us in shaping the future of AI. Contact us to explore sponsorship opportunities and be a catalyst for change.
 
-Thank you for being a part of this AI democratization movement! Let's build a future where AI is accessible to all. 🤖✨
+Thank you for being a part of this AI democratization movement! Let's build a future where AI is accessible to all. ✨
