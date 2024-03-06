@@ -10,7 +10,7 @@ from utils import create_assistant_from_config_file, upload_to_openai, export_as
 
 st.set_page_config(
     page_title="Build, Share and Sell OpenAI Assistants API",
-    page_icon="🤖",
+    page_icon="🥇",
     layout="wide",
     menu_items={
         'Get Help': 'mailto:servizi@intelligenzaartificialeitalia.net',
@@ -19,10 +19,10 @@ st.set_page_config(
     }
 )
 
-st.title("Build🚧, Share🤗 and Sell💸 OpenAI Assistants🤖")
+st.title("Build🚧, Share and Sell💸 OpenAI Assistants")
 
 
-utilizzo = st.selectbox("🤖 Hi, what do you want to do?", ("Create or Import an Assistant", "Use an Assistant"))
+utilizzo = st.selectbox(" What do you want to do?", ("Create or Import an Assistant", "Use an Assistant"))
 
 if utilizzo != "Use an Assistant":
     scelta_creazione = st.selectbox(
@@ -42,7 +42,7 @@ if openaiKey:
             col1, col2 = st.columns(2)
 
             with col1:
-                nome_assistente = st.text_input("👶 Insert the name of the assistant")
+                nome_assistente = st.text_input(" Insert the name of the assistant")
 
             with col2:
                 modello_assistente = st.selectbox(
@@ -81,10 +81,10 @@ if openaiKey:
                                 st.session_state.id_file = stored_file
                                 status.update(label="Files uploaded successfully", state="complete", expanded=False)
 
-                if st.button("🤖 Build Assistant") and prompt_sistema:
+                if st.button(" Build Assistant") and prompt_sistema:
                     with st.status("⏲ Assistant creation in progress...", expanded=True) as status:
                         time.sleep(2)
-                        status.update(label="🧐 Configuring the assistant...", state="running")
+                        status.update(label="Configuring the assistant...", state="running")
                         time.sleep(2)
                         if "id_file" in st.session_state and len(st.session_state.id_file) > 0:
                             status.update(label="📡 Create Assistant with File and Retrieval...", state="running")
@@ -142,7 +142,7 @@ if openaiKey:
         else:
             file_up = st.file_uploader("📥 Upload .iaItaliaBotConfig", type=['.iaItaliaBotConfig'], accept_multiple_files=False)
             if file_up:
-                if st.button("🤖 Build imported Assistant"):
+                if st.button("Build imported Assistant"):
                     client = openai.OpenAI()
                     
 
@@ -183,7 +183,7 @@ if openaiKey:
                 if st.button("🔄 Restart"):
                     st.rerun()
 
-html_chat = '<center><h6>🤗 Support the project with a donation for the development of new features 🤗</h6>'
+html_chat = '<center><h6>Support the project with a donation for the development of new features </h6>'
 html_chat += '<br><a href="https://rebrand.ly/SupportAUTOGPTfree"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="PayPal donate button" /></a><center><br>'
 st.markdown(html_chat, unsafe_allow_html=True)
 st.write('Made with ❤️ by [Alessandro CIciarelli](https://intelligenzaartificialeitalia.net)')
